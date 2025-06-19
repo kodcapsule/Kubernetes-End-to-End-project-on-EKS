@@ -1,5 +1,20 @@
 # Kubernetes End-to-End project on EKS: AWS EKS Cluster Setup, Application Deployment, and Ingress Configuration
 
+## Introduction 
+Kubernetes is an open-source container orchestration platform that enables you to automate the  deployment,sacaling and  management containerised applications at scale. Kubernetes offers a lot of benefits including:
+1. Auto-healing
+2. Auto-scaling
+3. Enterprise-support
+More on Kubernetes [here](https://kubernetes.io/)
+
+With all these benefits comes the complexity of managing Kubernetes clusters. This is where Amazon Elastic Kubernetes Service (EKS) comes into the picture. EKS provides a fully managed Kubernetes service that eliminates the complexity of operating Kubernetes clusters. EKS allows you to:
+1. Deploy applications faster with less operational overhead
+2. Scale seamlessly to meet changing workload demands
+3. Improve security through AWS integration and automated updates
+4. Choose between standard EKS or fully automated EKS Auto Mode
+For further reading, you can access the [EKS official documentation](https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html)
+
+In this project, we will be creating an EKS cluster in AWS and deploying an application to that cluster. So grab a cup of coffee and let’s get started. 
 
 ## Prerequisites
 **1. AWS Account:** You should have an AWS account with an IAM user with these minimal access levels. 
