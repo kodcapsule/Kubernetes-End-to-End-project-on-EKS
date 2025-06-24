@@ -1,0 +1,6 @@
+NAME                              READY   STATUS    RESTARTS   AGE
+deployment-2048-bdbddc878-5r6pp   1/1     Running   0          12m
+deployment-2048-bdbddc878-gn8jd   1/1     Running   0          12m
+deployment-2048-bdbddc878-rg7xb   1/1     Running   0          12m
+deployment-2048-bdbddc878-wb57x   1/1     Running   0          12m
+deployment-2048-bdbddc878-z7spf   1/1     Running   0          12m

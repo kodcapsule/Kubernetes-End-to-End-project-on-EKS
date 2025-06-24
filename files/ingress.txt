@@ -1,0 +1,2 @@
+NAME           CLASS   HOSTS   ADDRESS   PORTS   AGE
+ingress-2048   alb     *                 80      12m

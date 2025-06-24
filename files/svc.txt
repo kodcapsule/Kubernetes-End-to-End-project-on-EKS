@@ -1,0 +1,2 @@
+NAME           TYPE       CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
+service-2048   NodePort   10.100.20.30   <none>        80:31923/TCP   12m
