@@ -40,17 +40,17 @@ In this project, we will be creating an EKS cluster in AWS and deploying an appl
    
 
 ## Tech Stack/ AWS Services
-- 1.VPC
+- 1. VPC
 - 2. Subnets
 - 3. IAM Roles
 - 4. Route TAbles
 - 5. NatGateway
-- 6.Security Groups
-- 7.Internete Gateway
+- 6. Security Groups
+- 7. Internete Gateway
 - 9. EKS Cluster
 - 10. Elastic IP (EIP)
 
-## Project Architecture
+
 
 
 ## EKS Cluster  Setup 
@@ -63,9 +63,9 @@ Use the eksctl tool to create your kubernetes cluster in AWS.
 ```bash
   eksctl create cluster --name <CLUSTER_NAME> --profile <AWS_PROFILE> --region <AWS_REGION> --fargate
 ```
-**CLUSTER_NAME:** Name of your cluster eg. game-2408-eks-cluster
-**AWS_REGION:** The region to deploy your cluster eg. us-east-1
-**AWS_PROFILE:**  AWS profile to use, if you don't specify a profile the default profile will be used.
+- **CLUSTER_NAME:** Name of your cluster eg. game-2408-eks-cluster
+- **AWS_REGION:** The region to deploy your cluster eg. us-east-1
+- **AWS_PROFILE:**  AWS profile to use, if you don't specify a profile the default profile will be used.
 
 When you run the above command, it will creates a new Amazon EKS  cluster using AWS Fargate compute type. With Fargate , AWS manages the underlying compute infrastructure for you in the data plane. 
 
@@ -112,17 +112,8 @@ eksctl create fargateprofile \
     --namespace game-2048 \
     --profile <AWS_PROFILE>
 ```
-Make sure to replace the `**<CLUSTER_NAME**`,`<REGION>`  and `<AWS_PROFILE>` with the necessory values.
-### Create Fargate profile
-In this next step you need to create a fargte profile
-```bash
-eksctl create fargateprofile \
-    --cluster game-2408-eks-cluster \
-    --region us-east-1 \
-    --name alb-sample-app \
-    --namespace game-2048 \
-    --profile wewoli
-```
+Make sure to replace the `<CLUSTER_NAME`,`<REGION>`  and `<AWS_PROFILE>` with the necessory values.
+
 **Fagate Profile creation**
 ![Fagate Profile creation](./images/fargte%20profile.png)
 
@@ -138,7 +129,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/aws-load-bala
 ```
 ![Deployment](./images/deployment.png)
 
-### check that the pods have been created successfully
+### Check that the all the resources have been created successfully
 **Pods**
 Command
 ```bash
@@ -212,7 +203,7 @@ replicaset.apps/deployment-2048-bdbddc878   5         5         5       13m
 ```
 
 
-## setup alb add on
+## Setup ALB add on
 
 ### configure IAM OIDC provider
 ```bash
@@ -289,7 +280,8 @@ Error: failed to create iamserviceaccount(s)
 2025-06-19 15:40:22 [ℹ]  1 error(s) occurred and IAM Role stacks haven't been created properly, you may wish to check CloudFormation console
 2025-06-19 15:40:22 [✖]  waiter state transitioned to Failure
 
-Solution
+Solution:
+Check and make sure the IAM policy and role are created in the same AWS accout you deployed your EKS custer
 
 
 
